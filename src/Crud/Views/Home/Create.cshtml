@@ -1,0 +1,20 @@
+﻿@model CreateProductViewModel
+
+<form asp-controller="Home" asp-action="Create" method="post">
+    <div>
+        <label>Name: </label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div>
+        <label>Details: </label>
+        <input asp-for="Details" />
+        <span asp-validation-for="Details"></span>
+    </div>
+    <div>
+        <label>Type: </label>
+        <select asp-for="Type" asp-items="@Html.GetEnumSelectList(typeof(TypeEnum))"></select>
+    </div>
+    <input type="submit" value="SAVE" />
+      
+</form>

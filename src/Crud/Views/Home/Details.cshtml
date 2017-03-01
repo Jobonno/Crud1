@@ -1,0 +1,10 @@
+﻿@model GetDetailsViewModel
+
+<h1>@Model.Name</h1>
+
+<h3>@Model.Details</h3>
+
+<h6>@Model.Type</h6>
+
+@Html.ActionLink("Delete", "Delete", "Home", new { id = Model.Id })
+

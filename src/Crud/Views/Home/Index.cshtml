@@ -1,0 +1,29 @@
+﻿@model GetDataViewModel
+
+<h1>List of @Model.Total Products</h1>
+
+<p>The Date is @Model.Time</p>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Details</th>
+            <th>Type</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model.List)
+    {
+        <tr>
+            <td><strong>@item.Name</strong></td>
+            <td>@item.Details</td>
+            <td>@item.Type</td>
+            <td>@Html.ActionLink("Info...", "Details", "Home", new {id = item.ProductId })    </td>
+            <td>@Html.ActionLink("Edit", "Update", "Home", new { id = item.ProductId })    </td>
+            <td>@Html.ActionLink("DELETE", "Delete", "Home", new { id = item.ProductId })    </td>
+            
+            
+        </tr>
+    }
+</table>
+    @Html.ActionLink("Add Product", "Create", "Home")

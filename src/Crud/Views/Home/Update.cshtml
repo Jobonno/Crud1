@@ -1,0 +1,20 @@
+﻿@model UpdateProductViewModel
+
+<form asp-controller="Home" asp-action="Update" method="post">
+    <div>
+        <label>Name: </label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name" value="@Model.Name"></span>
+    </div>
+    <div>
+        <label>Details: </label>
+        <input asp-for="Details" />
+        <span asp-validation-for="Details" value="@Model.Details"></span>
+    </div>
+    <div>
+        <label>Type: </label>
+        <select asp-for="Type" asp-items="@Html.GetEnumSelectList(typeof(TypeEnum))" value="@Model.Type"></select>
+    </div>
+    <input type="submit" value="Update" />
+
+</form>
